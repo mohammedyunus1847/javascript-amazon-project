@@ -1,4 +1,4 @@
-const products = [
+const Products = [
   {
     id: "e43638ce-6aa0-4b85-b27f-e1d07eb678c6",
     image: "images/products/athletic-cotton-socks-6-pairs.jpg",
@@ -14,6 +14,17 @@ const products = [
       "apparel"
     ]
   },
+   {
+        image:'images/products/portugal-jersy.jpeg',
+        name:'Portugal Ronald 7 Away Football Jersey T-Shirt',
+        rating:{
+            stars:5,
+            count:60
+        },
+        priceCents:5999
+
+
+    },
   {
     id: "15b6fc6f-327a-4ec4-896f-486349e85a3d",
     image: "images/products/intermediate-composite-basketball.jpg",

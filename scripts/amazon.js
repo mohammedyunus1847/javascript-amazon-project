@@ -1,51 +1,22 @@
-let Products = [
-    {
-       Images: 'images/products/athletic-cotton-socks-6-pairs.jpg',
-       Name:'Black and Gray Athletic Cotton Socks - 6 Pairs',
-       Rating:{
-        Stars:4.5,
-        count:87
-       },
-       priceCents:1090
-    },
-    {
-       Images:'images/products/intermediate-composite-basketball.jpg',
-       Name:'Intermediate Size Basketball',
-       Rating:{
-        Stars:4,
-        count:127
-       },
-       priceCents:2095
-    },
-    {
-        Images:'images/products/adults-plain-cotton-tshirt-2-pack-teal.jpg',
-        Name:'Adults Plain Cotton T-Shirt - 2 Pack',
-        Rating:{
-            Stars:4.5,
-            count:56
-        },
-        priceCents:799
-    }
 
-];
 let productHTML=''
 Products.forEach((product)=>{
     productHTML+=`   
             <div class="product-container">
                 <div class="product-image-container">
                     <img class="product-image"
-                    src="${product.Images}">
+                    src="${product.image}">
                 </div>
 
                 <div class="product-name limit-text-to-2-lines">
-                    ${product.Name}
+                    ${product.name}
                 </div>
 
                 <div class="product-rating-container">
                     <img class="product-rating-stars"
-                    src="images/ratings/rating-${product.Rating.Stars*10}.png">
+                    src="images/ratings/rating-${product.rating.stars*10}.png">
                     <div class="product-rating-count link-primary">
-                    ${product.Rating.count}
+                    ${product.rating.count}
                     </div>
                 </div>
 
@@ -75,7 +46,8 @@ Products.forEach((product)=>{
                     Added
                 </div>
 
-                <button class="add-to-cart-button button-primary">
+                <button class="add-to-cart-button button-primary js-add-to-cart"
+                data-product-id='${product.id}'>
                     Add to Cart
                 </button>
                 </div>`
@@ -83,3 +55,27 @@ Products.forEach((product)=>{
 
 });
 document.querySelector('.js-products-grid').innerHTML=productHTML;
+document.querySelectorAll('.js-add-to-cart')
+    .forEach((buttton)=>{
+        buttton.addEventListener('click',()=>{
+            const productId=buttton.dataset.productId;
+            let matchingItem;
+            cart.forEach((item)=>{
+                if(productId===item.productId){
+                    matchingItem=item;
+                }
+            })
+
+            if(matchingItem){
+                matchingItem.Quantity+=1
+
+            }else{
+                cart.push({
+                productId:productId,
+                Quantity:1
+                });
+            }
+            
+            console.log(cart)
+        })
+    })
