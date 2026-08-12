@@ -1,4 +1,5 @@
 import {cart} from '../data/cart.js';
+import {Products} from '../data/products.js'
 
 let productHTML=''
 Products.forEach((product)=>{
