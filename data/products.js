@@ -15,13 +15,14 @@ export const Products = [
     ]
   },
    {
-        image:'images/products/portugal-jersy.jpeg',
-        name:'Portugal Ronald 7 Away Football Jersey T-Shirt',
-        rating:{
-            stars:5,
-            count:60
-        },
-        priceCents:5999
+    id: "e4113638ce-6aa0-4b85-b27f-e1d07eb678c6",
+    image:'images/products/portugal-jersy.jpeg',
+    name:'Portugal Ronald 7 Away Football Jersey T-Shirt',
+    rating:{
+        stars:5,
+        count:60
+    },
+    priceCents:5999
 
 
     },
@@ -667,5 +668,25 @@ export const Products = [
       "apparel",
       "mens"
     ]
+  },
+  {
+    id:"bvc21847e9-5323-403f-b7cf-57fde044a955",
+    image:"images/products/casio.jpeg",
+    name:"Brand 2 Combo Digital 4 Colours Vintage Square Dial Unisex Water Resist Watch for Men",
+    rating:{
+      stars:3.5,
+      count:256
+    },
+    priceCents:499
+  },
+  {
+    id:"nuc21847e9-5323-403f-b7cf-57fde044a955",
+    image:"images/products/iphone.jpeg",
+    name:"iPhone 17 Pro Max 2 TB: 17.42 cm (6.9″) Display with Promotion, A19 Pro Chip, Best Battery Life in Any iPhone Ever",
+    rating:{
+      stars:4.5,
+      count:536
+    },
+    priceCents:2367
   }
 ];

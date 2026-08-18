@@ -2,6 +2,8 @@ import {cart, addToCart} from '../data/cart.js';
 import {Products} from '../data/products.js';
 import {formatCurrency} from './utils/money.js';
 
+
+
 let productHTML=''
 Products.forEach((product)=>{
     productHTML+=`   
@@ -57,6 +59,11 @@ Products.forEach((product)=>{
     
 
 });
+let hoemcart=0;
+cart.forEach((item)=>{
+    hoemcart+=item.Quantity;
+})
+document.querySelector('.js-cart-Quantity').innerHTML=hoemcart;
 
 
 document.querySelector('.js-products-grid').innerHTML=productHTML;
