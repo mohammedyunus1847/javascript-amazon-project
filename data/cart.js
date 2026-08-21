@@ -58,14 +58,14 @@ export function removeCart(productId){
     saveTostorage();
 }
 
-export function updateQuantity(productId,newQuantity){
+export function updateQuantity(productId,newquantity){
     let matchingItem;
     cart.forEach((cartitem)=>{
         if(productId===cartitem.productId){
             matchingItem=cartitem
         }
     });
-    matchingItem.quantity=newQuantity;
+    matchingItem.quantity=newquantity;
     saveTostorage();
 
 }
