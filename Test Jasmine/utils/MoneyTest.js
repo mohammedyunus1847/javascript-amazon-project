@@ -13,4 +13,7 @@ describe('Test Suit : formatCurrency', ()=>{
     it('Checks with Point Value',()=>{
         expect(formatCurrency(2000.4)).toEqual('20.00')
     });
+    it('check point with another value',()=>{
+        expect(formatCurrency(3000.4)).toEqual('30.00')
+    })
 })
