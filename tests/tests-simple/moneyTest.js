@@ -34,3 +34,6 @@ if(formatCurrency(2000.4)==='20.00'){
 }else{
     console.log('Failed');
 };
+
+expect(formatCurrency(-2000.4)).toEqual('-20.00')
+
