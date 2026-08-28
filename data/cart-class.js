@@ -1,15 +1,17 @@
 class Cart {
 
-    cartItems;
-    localstorageKey;
+    cartItems;                //it is called Public Property of class//
+    #localstorageKey;        //if we use # it is called private property of class//
+    
+    
     constructor(localstorageKey){
-        this.localstorageKey=this.localstorageKey;
-        this.loadFromStorage();
+        this.#localstorageKey=this.localstorageKey;
+        this.#loadFromStorage();
     }
 
-    loadFromStorage() {
+    #loadFromStorage() {
         this.cartItems = JSON.parse(
-            localStorage.getItem(this.localstorageKey)
+            localStorage.getItem(this.#localstorageKey)
         );
 
         if (!this.cartItems) {
@@ -30,7 +32,7 @@ class Cart {
 
     saveTostorage() {
         localStorage.setItem(
-            this.localstorageKey,
+            this.#localstorageKey,
             JSON.stringify(this.cartItems)
         );
     }
