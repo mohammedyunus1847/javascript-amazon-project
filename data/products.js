@@ -61,6 +61,22 @@ export function getProduct(productId){
   return matchingProduct
 }
 
+/*
+function sayName(){
+  console.log(this)
+}
+sayName.call('yunus')
+*/ // call is used to tell the function who this to be //
+
+
+/*
+const curDate= new Date();
+console.log(curDate)
+console.log(curDate.toLocaleDateString());
+console.log(curDate.toLocaleTimeString());
+console.log(curDate.toUTCString());
+*/
+
 
 export const Products = [
   {
