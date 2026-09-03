@@ -1,5 +1,5 @@
 import { formatCurrency } from "../scripts/utils/money.js";
-class Product{
+export class Product{
   id;
   image;
   name;
@@ -30,7 +30,7 @@ class Product{
 }
 
 
-class Clothing extends Product{
+export class Clothing extends Product{
   
   sizeChartLink;
   constructor(productDetails){
@@ -47,6 +47,28 @@ class Clothing extends Product{
     `
   }
 };
+
+export class Appliances extends Product{
+  instructionLink;
+  warrantylink;
+  constructor(productDetails){
+    super(productDetails);
+    this.instructionLink=productDetails.instructionLink;
+    this.warrantylink=productDetails.warrantyLink;
+  }
+  extraInfoHTML(){ 
+    //super.extraInfoHTML(); we can aslo use super to call the parent class method //
+    return`
+    <a href="${this.instructionLink}" target="_blank">
+    Instruction chart
+    </a>
+    <a href="${this.warrantylink}" target="_blank">
+    Warranty Chart
+    </a>
+    `
+  }
+
+}
 
 
 
@@ -152,7 +174,10 @@ export const Products = [
       "toaster",
       "kitchen",
       "appliances"
-    ]
+    ],
+    type: "Appliances",
+    instructionLink:'images/appliance-instructions.png',
+    warrantyLink:'images/appliance-warranty.png'
   },
   {
     id: "3ebe75dc-64d2-4137-8860-1f5a963e534b",
@@ -774,6 +799,8 @@ export const Products = [
 ].map((productDetails)=>{
   if(productDetails.type==='clothing'){
     return new Clothing(productDetails);
+  }else if(productDetails.type==='Appliances'){
+    return new Appliances(productDetails);
   }
   return new Product(productDetails);
 });

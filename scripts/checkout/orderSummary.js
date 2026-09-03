@@ -1,4 +1,5 @@
-import {cart,removeCart,updateQuantity,UpdateDeliveryOption} from "../../data/cart.js";
+import {removeCart,updateQuantity,UpdateDeliveryOption} from "../../data/cart.js";
+import {cart} from '../../data/cart-class.js';
 import {Products,getProduct} from "../../data/products.js";
 import {formatCurrency} from "../utils/money.js";
 import dayjs  from "https://unpkg.com/dayjs@1.11.10/esm/index.js";
@@ -10,7 +11,7 @@ import {rendercheckoutHeader} from '../checkout/checkoutHeader.js'
 export function renderOrderSummary(){
     let cartSummaryHTML=''
 
-    cart.forEach((cartitem)=>{
+    cart.cartItems.forEach((cartitem)=>{
         let productId=cartitem.productId;
         let matchingProduct=getProduct(productId)
        
@@ -195,7 +196,7 @@ export function renderOrderSummary(){
         element.addEventListener('click',()=>{
             const productId=element.dataset.productId;
             const deliveryOptionId=element.dataset.deliveryOptionId;
-            UpdateDeliveryOption(productId,deliveryOptionId);
+            cart.UpdateDeliveryOption(productId,deliveryOptionId);
             renderOrderSummary();
             renderPaymentSummary();
         })

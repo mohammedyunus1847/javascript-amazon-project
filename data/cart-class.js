@@ -111,6 +111,7 @@ class Cart {
     }
 }
 
+export const cart = new Cart('cart-oop');
 const buissnesCart= new Cart('js-loop')
 console.log(buissnesCart);
 
