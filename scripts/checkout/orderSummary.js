@@ -28,6 +28,7 @@ export function renderOrderSummary(){
         `
         
         <div class="cart-item-container 
+
         js-cart-item-container
         js-cart-item-container-${matchingProduct.id}">
             <div class="delivery-date ">
@@ -185,7 +186,7 @@ export function renderOrderSummary(){
         container.classList.remove('is-editing-quantity');
         quantity_label.innerHTML=newQuantity;
         
-        renderCheckoutHeader();
+        rendercheckoutHeader();
         renderOrderSummary();
         renderPaymentSummary();
         });
