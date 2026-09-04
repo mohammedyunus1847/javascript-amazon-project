@@ -1,3 +1,4 @@
+import {validDeliveryOption} from './deliveryOptions.js';
 class Cart {
 
     cartItems;                //it is called Public Property of class//
@@ -5,7 +6,7 @@ class Cart {
     
     
     constructor(localstorageKey){
-        this.#localstorageKey=this.localstorageKey;
+        this.#localstorageKey=localstorageKey;
         this.#loadFromStorage();
     }
 
